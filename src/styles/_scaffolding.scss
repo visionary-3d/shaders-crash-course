@@ -1,0 +1,23 @@
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+  background: $background-color;
+  color: $font-color;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  max-width: $page-width;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
