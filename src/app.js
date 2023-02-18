@@ -20,22 +20,33 @@ const startApp = () => {
 
   // lighting
   const dirLight = new THREE.DirectionalLight('#ffffff', 0.75)
+  dirLight.position.set(5, 5, 5)
 
-  const light2 = new THREE.DirectionalLight('#ffffff', 0.75)
-  dirLight.position.set(-5, -5, 5)
-
-  const ambientLight = new THREE.AmbientLight('#ffffff', 0.5)
+  const ambientLight = new THREE.AmbientLight('#ffffff', 0.2)
   scene.add(dirLight, ambientLight)
 
 
 
 
+
+
+
+
+
+
+
   // meshes
-  const geometry = new THREE.IcosahedronGeometry(1, 2)
+  const geometry = new THREE.IcosahedronGeometry(1, 5)
   const material = new THREE.MeshStandardMaterial()
 
   const ico = new THREE.Mesh(geometry, material)
   scene.add(ico)
+
+
+
+
+
+
 
 
 
