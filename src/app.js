@@ -9,6 +9,8 @@ import { CopyShader } from 'three/examples/jsm/shaders/CopyShader.js'
 import vertexShader from './shaders/vertex.glsl'
 import fragmentShader from './shaders/fragment.glsl'
 
+import colorfulTexture from './images/image.jpg'
+
 const startApp = () => {
   const scene = useScene()
   const camera = useCamera()
@@ -36,8 +38,16 @@ const startApp = () => {
 
 
   // meshes
-  const geometry = new THREE.IcosahedronGeometry(1, 5)
-  const material = new THREE.MeshStandardMaterial()
+  const geometry = new THREE.PlaneGeometry(2, 2)
+  const material = new THREE.ShaderMaterial({
+    vertexShader: vertexShader,
+    fragmentShader: fragmentShader,
+    // wireframe: true,
+  })
+
+  material.uniforms.uTime = {value: 0}
+  material.uniforms.uRadius = {value : 0.5}
+  material.uniforms.uTexture = {value: new THREE.TextureLoader().load(colorfulTexture)}
 
   const ico = new THREE.Mesh(geometry, material)
   scene.add(ico)
@@ -55,6 +65,8 @@ const startApp = () => {
   const cameraFolder = gui.addFolder('Camera')
   cameraFolder.add(camera.position, 'z', 0, 10)
   cameraFolder.open()
+
+  gui.add(material.uniforms.uRadius, "value").min(0).max(1)
 
   // postprocessing
   const renderTargetParameters = {
@@ -76,9 +88,9 @@ const startApp = () => {
   outputPass.renderToScreen = true
 
   // adding passes to composer
-  addPass(blendPass)
-  addPass(savePass)
-  addPass(outputPass)
+  // addPass(blendPass)
+  // addPass(savePass)
+  // addPass(outputPass)
 
   useTick(({ timestamp, timeDiff }) => {
   })
