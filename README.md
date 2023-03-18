@@ -1,6 +1,11 @@
-# Three Webpack Boilerplate
+# Three.JS Shaders Tutorial
 
-Three webpack 5 boilerplate using Babel, PostCSS, Sass and Gsap.
+## https://youtu.be/oKbCaj1J6EI
+
+![Three js Shaders Crash Course For Beginners  Create This Amazing 3D Animation!](https://user-images.githubusercontent.com/64514807/226115326-fa6dba32-bab2-49c3-ace8-ef0bb1060dcd.png)
+
+
+This is my Three webpack 5 boilerplate using Babel, PostCSS, Sass and Gsap.
 
 ## Installation
 
