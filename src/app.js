@@ -15,8 +15,6 @@ import vertexMain from './shaders/vertex_main.glsl'
 import fragmentPars from './shaders/fragment_pars.glsl'
 import fragmentMain from './shaders/fragment_main.glsl'
 
-import colorfulTexture from './images/image.jpg'
-
 const startApp = () => {
   const scene = useScene()
   const camera = useCamera()
